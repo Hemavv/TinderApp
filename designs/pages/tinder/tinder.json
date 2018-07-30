@@ -1,0 +1,13 @@
+{
+    "appPageId": "7a1992e5-d9fd-2030-0c27-f413e87f6b6e",
+    "appPageName": "tinder",
+    "componentName": "tinderComponent",
+    "selectorName": "bh-tinder",
+    "htmlFileName": "tinder.template.html",
+    "tsFileName": "tinder.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

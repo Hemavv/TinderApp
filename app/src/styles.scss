@@ -1,0 +1,125 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+.row1{
+     background: linear-gradient(262deg, #ff7854, #fd267d);
+    
+}
+#cardtravel {
+       border-radius:50% !important ;     
+     margin-left:45% !important;     
+     margin-top:3% !important;     
+      border: 2px solid white !important;
+      width:10%;
+      height:15%;
+}
+
+.profile{
+color:white;
+text-align:center;
+margin-left:10px;
+}
+
+.refreshicon,.crossicon,.staricon,.likedicon,.lighticon{
+        background-color:white;
+    width:65px;
+    height:65px;
+    border-color:white;
+    border:5px solid white;
+    cursor:pointer;
+    border-radius: 50%;
+   
+}
+.refreshicon:hover,.crossicon:hover,.staricon:hover,.likedicon:hover,.lighticon:hover{
+-ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+    }
+.bellicon{
+    margin:10px; 
+    width:10%;
+    height:30px;
+    border-radius:20%;
+}
+.para1{
+    margin-left:10px;
+    margin-top:2px;
+    
+}
+.row2{
+    background-color:yellow;
+    max-height:5%;
+     background: linear-gradient(262deg,#ff9900,#ffff00);
+}
+.messageicon{
+    width: 10%;
+     height: 52%;
+     border-radius: 50%;
+     margin-left:45%;
+     margin-top:3%;
+     border-color: white;
+      border-style: solid;
+}
+.tindericon{
+      width: 10%;
+     height: 30px;
+     border-radius: 50%;
+     border-color: white;
+      border-style: solid;
+      margin-right:2px;
+      margin-top:9px;
+      margin-left:2px
+}
+.card{
+     margin: 25%;
+    width: 50%;
+    height: 200px;
+    border-radius: 5%;
+    margin-top: 14%;
+}
+.swipe{
+    margin-top:-15%;
+    text-align:center;
+}
+.para{
+  text-align: center;
+    width: 70%;
+    margin-left: 17%;
+}
+
+.girlpic{
+   margin:5%;
+ width:350px;
+height:70%;
+border-radius:2%;
+  transform: translate3d(0px, 0px, 0px) rotate(0rad) scale(1);
+       
+}
+.material-icons{
+    border-radius:50%;
+    width:20px;
+    height:15%;
+    text-align:left;
+   margin-top:7%;
+margin-left:180px;
+color:white;
+font-size: 35px;
+
+cursor: pointer;
+}
+
+.header{
+    margin-left:10%;
+    color:white;
+    font-size:25px;
+    font-family: Arial, Helvetica, sans-serif;
+     text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px white;
+    //           opacity: 0.6;
+    // filter: alpha(opacity=60);
+}
+
+
+

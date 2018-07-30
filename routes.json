@@ -1,0 +1,31 @@
+{
+    "routes": [
+        {
+            "path": "tinder",
+            "component": "tinderComponent",
+            "pathMatch": "",
+            "redirectTo": "",
+            "resolve": "",
+            "data": "",
+            "canActivate": ""
+        },
+        {
+            "path": "''",
+            "component": "",
+            "pathMatch": "full",
+            "redirectTo": "tinder",
+            "resolve": "",
+            "data": "",
+            "canActivate": ""
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent",
+            "pathMatch": "",
+            "redirectTo": "",
+            "resolve": "",
+            "data": "",
+            "canActivate": ""
+        }
+    ]
+}
