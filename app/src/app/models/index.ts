@@ -1,1 +1,2 @@
-export * from '../models';
+export * from '.';
+export { cardImage } from './cardImage.model';

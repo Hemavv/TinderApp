@@ -1,4 +1,4 @@
-import { environment } from '../../environments/environment';
+import { environment } from 'environments/environment';
 import { Utility } from '../util';
 import { BLocalStorageService } from './bLocalStorage.service';
 

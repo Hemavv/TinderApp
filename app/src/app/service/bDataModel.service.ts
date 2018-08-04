@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { SystemService } from './system.service';
 // import { Http } from '@angular/http';
-import { BDataSourceService } from 'app/service/bDataSource.service';
+import { BDataSourceService } from './bDataSource.service';
 // import {da} from '../../constants/app.const.json';
 
 @Injectable()
@@ -20,7 +20,7 @@ export class BDataModelService {
         this.dsService.getDataSource().subscribe(result => {
             this.dmDs = result;
         }, error => {
-            console.error(error);
+            // console.error(error);
         })
     }
 

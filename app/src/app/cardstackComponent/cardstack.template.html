@@ -1,0 +1,8 @@
+<div id="angularRoot">
+  <div fxLayout="row" style="position:relative;  border-radius: 5%;" fxLayoutAlign="center start" fxShow="true" fxHide="false" [stackConfig]="stackConfig" swing-stack="">
+    <div fxLayout="column" style="position:absolute;" class="column" fxShow="true" fxHide="false" swing-card="" *ngFor="let c of card">
+      <img [imgSrc]="c.image" draggable="false" class="img">
+      <h3 fxLayoutAlign="center end" class="header">{{c.name}}</h3>
+    </div>
+  </div>
+</div>

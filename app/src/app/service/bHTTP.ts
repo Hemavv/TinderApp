@@ -9,7 +9,7 @@ import {
   HttpErrorResponse,
   HttpClient
 } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs/Rx';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { BHTTPLoader } from './bHTTPLoader';
 import { SystemService } from './system.service';
 import { BSessionStorage } from './bSessionStorage.service';

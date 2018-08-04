@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SystemService } from 'app/service/system.service';
+import { SystemService } from '../../service/system.service';
 
 declare const window: any;
 declare const cordova: any;

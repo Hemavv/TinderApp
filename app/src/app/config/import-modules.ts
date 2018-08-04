@@ -9,9 +9,9 @@ import 'hammerjs';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { BhiveFileModule } from 'app/file/file.module';
+import { BhiveFileModule } from '../file/file.module';
 import { AgmCoreModule } from '@agm/core';
-import { environment } from '../../environments/environment'
+import { environment } from 'environments/environment'
 
 
 import {

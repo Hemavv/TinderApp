@@ -22,6 +22,14 @@ import { bsignatureComponent } from '../bsignatureComponent/bsignature.component
 import { btoggleoptionsComponent } from '../btoggleoptionsComponent/btoggleoptions.component';
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-newComponent
+import { newComponent } from '../newComponent/new.component';
+//CORE_REFERENCE_IMPORT-awetComponent
+import { awetComponent } from '../awetComponent/awet.component';
+//CORE_REFERENCE_IMPORT-cardstackserviceService
+// import { cardstackserviceService } from '../services/cardstackservice/cardstackservice.service';
+//CORE_REFERENCE_IMPORT-cardstackComponent
+import { cardstackComponent } from '../cardstackComponent/cardstack.component';
 //CORE_REFERENCE_IMPORT-tinderComponent
 import { tinderComponent } from '../tinderComponent/tinder.component';
 
@@ -56,6 +64,12 @@ export const appDeclarations = [
   bsignatureComponent,
   btoggleoptionsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-newComponent
+newComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-awetComponent
+awetComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cardstackComponent
+cardstackComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tinderComponent
 tinderComponent,
   PageNotFoundComponent,
@@ -81,6 +95,8 @@ export const appProviders = [
   NotificationService,
   BAuthGuard,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-cardstackserviceService
+
   LocalStorageService,
   PubSubService,
   BLoginService,
@@ -99,5 +115,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'tinder', component: tinderComponent},{path: '', redirectTo: 'tinder', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'tinder', component: tinderComponent},{path: 'cardstack', component: newComponent},{path: '', redirectTo: 'tinder', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

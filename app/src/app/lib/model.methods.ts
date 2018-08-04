@@ -1,5 +1,5 @@
-import { SystemService } from './../service/system.service';
-import { BDataSourceService } from './../service/bDataSource.service';
+import { SystemService } from '../service/system.service';
+import { BDataSourceService } from '../service/bDataSource.service';
 import { NgForm } from '@angular/forms';
 import { BDataModelService } from '../service/bDataModel.service';
 import * as models from '../models';

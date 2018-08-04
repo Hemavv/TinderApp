@@ -2,14 +2,14 @@ import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { SystemService } from './system.service';
 import { Observable } from 'rxjs/Observable';
 declare var PushNotification: any;
-import { BLocalStorageService } from 'app/service/bLocalStorage.service';
+import { BLocalStorageService } from './bLocalStorage.service';
 import * as firebase from 'firebase';
 import { PubSubService } from './pubSub.service';
 import { HttpClient } from '@angular/common/http';
 import { BSessionStorage } from './bSessionStorage.service';
 import { Router } from '@angular/router';
 import { BHTTPLoader } from './bHTTPLoader';
-import { environment } from '../../environments/environment.prod';
+import { environment } from 'environments/environment.prod';
 
 @Injectable()
 export class NotificationService implements OnInit, OnDestroy {

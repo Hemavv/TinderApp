@@ -1,7 +1,7 @@
 <div id="angularRoot">
   <div fxLayout="column" style="background-color:#f5f7fa;" fxFlex="100" fxLayoutAlign="center" fxShow="true" fxHide="false">
     <div fxLayout="row" fxFlex="100" fxShow="true" fxHide="false">
-      <div fxLayout="column" fxFlex="50" fxLayoutAlign="start" fxShow="true" fxHide="false">
+      <div fxLayout="column" style="z-index:1;" fxFlex="50" fxLayoutAlign="start" fxHide="true">
         <mat-card style="width:50%" class="card1">
           <div fxLayout="column" fxShow="true" fxHide="false">
             <div fxLayout="row" style="   " class="row1" fxFlex="100" fxLayoutWrap="true" fxLayoutGap="5" fxLayoutAlign="start" fxShow="true" fxHide="false">
@@ -34,21 +34,20 @@
         </mat-card>
         <div fxLayout="row" fxShow="true" fxHide="false"></div>
       </div>
-      <div fxLayout="row" fxFlex="30" fxShow="true" fxHide="false">
-        <div fxLayout="column" fxFlex="70" fxShow="true" fxHide="false">
-          <img imgSrc="Web/Icons/girly.jpg" alt=" Your Image" style="  " class="girlpic">
-          <div fxLayout="row" style="position:absolute;bottom:30%;" class="row3" fxFlex="50" fxLayoutGap="10" fxShow="true" fxHide="false">
-            <h3 class="header">Elastigirl</h3>
-            <mat-icon class="material-icons">info</mat-icon>
+      <div fxLayout="row" style="width:100%" fxFlex="100" fxLayoutAlign="center start" fxShow="true" fxHide="false">
+        <div fxLayout="column" style="width:100%;" fxFlex="50" fxLayoutAlign="center center" fxShow="true" fxHide="false">
+          <bh-cardstack [stackConfig]="stackConfig" (throwout)="onThrowOut($event)" [card]="card"></bh-cardstack>
+          <div fxLayout="row" style="position:absolute;bottom:30%;" class="row3" fxFlex="50" fxLayoutGap="10" fxShow="true" fxHide="true" *ngIf="false">
+            <div fxLayout="column" fxShow="true" fxHide="false">
+              <div fxLayout="row" fxLayoutAlign="center center" fxShow="true" fxHide="true">
+                <img imgSrc="Web/Icons/images1.png" class="refreshicon">
+                <img imgSrc="Web/Icons/nope.png" class="crossicon">
+                <img imgSrc="Web/Icons/liked.png" class="likedicon">
+                <img imgSrc="Web/Icons/star.png" class="staricon">
+                <img imgSrc="Web/Icons/lightboost.png" class="lighticon">
+              </div>
+            </div>
           </div>
-          <div fxLayout="row" fxShow="true" fxHide="false">
-            <img imgSrc="Web/Icons/images1.png" class="refreshicon">
-            <img imgSrc="Web/Icons/nope.png" class="crossicon">
-            <img imgSrc="Web/Icons/star.png" class="staricon">
-            <img imgSrc="Web/Icons/liked.png" class="likedicon">
-            <img imgSrc="Web/Icons/lightboost.png" class="lighticon">
-          </div>
-          <div fxLayout="row" fxShow="true" fxHide="false"></div>
         </div>
       </div>
     </div>

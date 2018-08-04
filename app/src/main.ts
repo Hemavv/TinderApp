@@ -1,11 +1,11 @@
-import { firebaseInitForServiceWorker } from './libConfig/firebaseInitForServiceWorker';
-import { environment } from './environments/environment.prod';
+import { firebaseInitForServiceWorker } from 'libConfig/firebaseInitForServiceWorker';
+import { environment } from 'environments/environment.prod';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import * as firebase from 'firebase';
-import { AppModule } from './app/app.module';
-import { initChartJS } from './libConfig/initChartJS';
-import { SystemService } from './app/service/system.service';
+import { AppModule } from 'app/app.module';
+import { initChartJS } from 'libConfig/initChartJS';
+import { SystemService } from 'app/service/system.service';
 import { BLocalStorageService } from 'app/service/bLocalStorage.service';
 // import { SystemService } from 'app/service/system.service.ts';
 
