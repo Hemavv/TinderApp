@@ -35,8 +35,8 @@
         <div fxLayout="row" fxShow="true" fxHide="false"></div>
       </div>
       <div fxLayout="row" style="width:100%" fxFlex="100" fxLayoutAlign="center start" fxShow="true" fxHide="false">
-        <div fxLayout="column" style="width:100%;" fxFlex="50" fxLayoutAlign="center center" fxShow="true" fxHide="false">
-          <bh-cardstack [stackConfig]="stackConfig" (throwout)="onThrowOut($event)" [card]="card"></bh-cardstack>
+        <div fxLayout="column" style=" width:100%          " fxFlex="50" fxLayoutAlign="center center" fxShow="true" fxHide="false" fxFlex.xs="100">
+          <bh-cardstack style="width:100%;" [stackConfig]="stackConfig" (throwout)="onThrowOut($event)" [cards]="cards" (message)="receive($event)"></bh-cardstack>
           <div fxLayout="row" style="position:absolute;bottom:30%;" class="row3" fxFlex="50" fxLayoutGap="10" fxShow="true" fxHide="true" *ngIf="false">
             <div fxLayout="column" fxShow="true" fxHide="false">
               <div fxLayout="row" fxLayoutAlign="center center" fxShow="true" fxHide="true">

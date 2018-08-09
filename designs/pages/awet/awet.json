@@ -1,0 +1,13 @@
+{
+    "appPageId": "9cecb378-91e3-64fb-bbf4-fd70acee6034",
+    "appPageName": "awet",
+    "componentName": "awetComponent",
+    "selectorName": "bh-awet",
+    "htmlFileName": "awet.template.html",
+    "tsFileName": "awet.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

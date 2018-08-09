@@ -1,8 +1,8 @@
 {
     "routes": [
         {
-            "path": "tinder",
-            "component": "tinderComponent",
+            "path": "cardstack",
+            "component": "cardstackComponent",
             "pathMatch": "",
             "redirectTo": "",
             "resolve": "",
@@ -13,7 +13,7 @@
             "path": "''",
             "component": "",
             "pathMatch": "full",
-            "redirectTo": "tinder",
+            "redirectTo": "cardstack",
             "resolve": "",
             "data": "",
             "canActivate": ""

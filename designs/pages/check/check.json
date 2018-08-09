@@ -1,0 +1,13 @@
+{
+    "appPageId": "d9b7fdf6-8176-066f-ece4-d25fa7cba731",
+    "appPageName": "check",
+    "componentName": "checkComponent",
+    "selectorName": "bh-check",
+    "htmlFileName": "check.template.html",
+    "tsFileName": "check.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

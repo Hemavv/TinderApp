@@ -1,8 +1,23 @@
 <div id="angularRoot">
-  <div fxLayout="row" style="position:relative;  border-radius: 5%;" fxLayoutAlign="center start" fxShow="true" fxHide="false" [stackConfig]="stackConfig" swing-stack="">
-    <div fxLayout="column" style="position:absolute;" class="column" fxShow="true" fxHide="false" swing-card="" *ngFor="let c of card">
-      <img [imgSrc]="c.image" draggable="false" class="img">
-      <h3 fxLayoutAlign="center end" class="header">{{c.name}}</h3>
+  <div fxLayout="row" fxLayoutGap="40%" fxHide="true" fxShow.xs="true" fxLayoutAlign.xs="center center">
+    <h3>{{display}}</h3>
+    <h3 *ngIf="(show)">No of cards remaining={{cardLength}}</h3>
+  </div>
+  <div fxLayout="column" fxShow="true" fxHide="false">
+    <div fxLayout="row" fxFlex="100" fxShow="true" fxHide="false">
+      <div fxLayout="column" fxFlex="20" fxLayoutAlign="center center" fxShow="true" fxHide="false" fxLayoutAlign.xs="end center" fxHide.xs="true">
+        <h2>{{display}}</h2>
+      </div>
+      <div fxLayout="row" style="position:relative;  border-radius: 5%;" fxFlex="60" fxLayoutAlign="center center" fxShow="true" fxHide="false" [stackConfig]="stackConfig" swing-stack="" fxLayoutAlign.xs="center center" fxFlex.xs="100" (throwout)="onThrowOut($event)">
+        <div fxLayout="column" style="position:absolute;" class="column" fxLayoutGap="10" fxLayoutAlign="center  center" fxShow="true" fxHide="false" swing-card="" fxLayoutAlign.xs="start start" *ngFor="let c of cards">
+          <img [imgSrc]="c.image" draggable="false" ngClass.xs="img1" class="img">
+          <h3 fxLayoutAlign="center end" fxHide.xs="false" class="header">{{c.name}}</h3>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="10" fxLayoutAlign="center center" fxShow="true" fxHide="false" fxHide.xs="true">
+        <h3>Total no of cards:{{total}}</h3>
+        <h2 *ngIf="(show)">No of cards remaining={{cardLength}}</h2>
+      </div>
     </div>
   </div>
 </div>

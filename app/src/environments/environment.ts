@@ -4,9 +4,9 @@ export const environment = {
     "properties": {
         "production": false,
         "baseUrl": "http://localhost:3000/bhive-art/",
-        "tenantName": "tindertenant",
-        "appName": "tinderapp",
-        "namespace": "com.neutrinos.tindertenant.tinderapp",
+        "tenantName": "cardstacktenant",
+        "appName": "cardstackapp",
+        "namespace": "com.neutrinos.cardstacktenant.cardstackapp",
         "isNotificationEnabled": false,
         "googleMapKey": "AIzaSyCSTnVwijjv0CFRA4MEeS-H6PAQc87LEoU",
         "firebaseSenderId": "FIREBASE_SENDER_ID",
@@ -15,8 +15,8 @@ export const environment = {
         "databaseURL": "FIREBASE_DATABASE_URL",
         "storageBucket": "FIREBASE_STORAGE_BUCKET",
         "messagingSenderId": "FIREBASE_SENDER_ID",
-        "appDataSource": "APP_DATA_SOURCE",
-        "appAuthenticationStrategy": "basicAuth",
+        "appDataSource": "cardstack-rt",
+        "appAuthenticationStrategy": "localAuth",
         "basicAuthUser": "username",
         "basicAuthPassword": "password"
     }

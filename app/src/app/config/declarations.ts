@@ -22,6 +22,12 @@ import { bsignatureComponent } from '../bsignatureComponent/bsignature.component
 import { btoggleoptionsComponent } from '../btoggleoptionsComponent/btoggleoptions.component';
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-stackserviceService
+import { stackserviceService } from '../services/stackservice/stackservice.service';
+//CORE_REFERENCE_IMPORT-homeComponent
+import { homeComponent } from '../homeComponent/home.component';
+//CORE_REFERENCE_IMPORT-checkComponent
+import { checkComponent } from '../checkComponent/check.component';
 //CORE_REFERENCE_IMPORT-newComponent
 import { newComponent } from '../newComponent/new.component';
 //CORE_REFERENCE_IMPORT-awetComponent
@@ -64,6 +70,10 @@ export const appDeclarations = [
   bsignatureComponent,
   btoggleoptionsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
+homeComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-checkComponent
+checkComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-newComponent
 newComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-awetComponent
@@ -95,6 +105,8 @@ export const appProviders = [
   NotificationService,
   BAuthGuard,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-stackserviceService
+stackserviceService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-cardstackserviceService
 
   LocalStorageService,
@@ -115,5 +127,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'tinder', component: tinderComponent},{path: 'cardstack', component: newComponent},{path: '', redirectTo: 'tinder', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'cardstack', component: cardstackComponent},{path: '', redirectTo: 'cardstack', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

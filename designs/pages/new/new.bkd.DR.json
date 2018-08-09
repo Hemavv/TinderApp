@@ -1,0 +1,31 @@
+{
+    "541060da-5aa3-318c-07e2-db1889f51dc5": {
+        "name": "HTML",
+        "guid": "541060da-5aa3-318c-07e2-db1889f51dc5",
+        "template": "%html%",
+        "designerTemplate": "<div class=\"ad-lists bkeeper-container-label bkeeper-general-css\" b-props=\"html-editor\"><i style=\"font-size: 37px;line-height: 2;padding: 1px;\" class=\"material-icons\">code</i></div>",
+        "paletteTemplate": "HTML",
+        "templateUrl": "",
+        "htmlAttributes": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "html",
+                "_value": "<bh-cardstack></bh-cardstack>",
+                "_type": "a",
+                "_attrDef": "p"
+            }
+        ],
+        "type": 7
+    }
+}
