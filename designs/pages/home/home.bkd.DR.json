@@ -8,6 +8,7 @@
         "templateUrl": "https://github.com/angular/flex-layout/wiki/fxLayout-API",
         "htmlAttributes": [
             {
+                "0": false,
                 "_key": "style",
                 "_value": "",
                 "_type": "kv",
@@ -34,6 +35,7 @@
                 "_attrDef": "p"
             },
             {
+                "4": false,
                 "_key": "fxLayoutGap",
                 "_value": "",
                 "_type": "kv",
@@ -83,7 +85,7 @@
             },
             {
                 "_key": "html",
-                "_value": "<bh-cardstack [cards]=\"cards\"></bh-cardstack>",
+                "_value": "<bh-cardstack style=\"width:100%\"  [cards]=\"cards\"></bh-cardstack>",
                 "_type": "a",
                 "_attrDef": "p"
             }

@@ -2,12 +2,10 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
-.img1{
-    width:93% !important;
-    height:100% !important;
-      border:0px !important;
-      border-radius: 0px !important;
-  }
+body{
+    overflow: hidden;
+}
+
 // .row1{
 //      background: linear-gradient(262deg, #ff7854, #fd267d);
     

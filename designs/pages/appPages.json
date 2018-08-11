@@ -9,21 +9,6 @@
         "componentName": "cardstackComponent",
         "isEntry": false
     },
-    "9cecb378-91e3-64fb-bbf4-fd70acee6034": {
-        "appPageName": "awet",
-        "componentName": "awetComponent",
-        "isEntry": false
-    },
-    "b37bbb94-dc09-58d3-d5ff-4adaeeef9674": {
-        "appPageName": "new",
-        "componentName": "newComponent",
-        "isEntry": false
-    },
-    "d9b7fdf6-8176-066f-ece4-d25fa7cba731": {
-        "appPageName": "check",
-        "componentName": "checkComponent",
-        "isEntry": false
-    },
     "b2e94616-37b4-ec71-e441-2a82563d445b": {
         "appPageName": "home",
         "componentName": "homeComponent",

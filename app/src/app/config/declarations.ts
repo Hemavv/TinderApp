@@ -26,12 +26,6 @@ import { btoggleoptionsComponent } from '../btoggleoptionsComponent/btoggleoptio
 import { stackserviceService } from '../services/stackservice/stackservice.service';
 //CORE_REFERENCE_IMPORT-homeComponent
 import { homeComponent } from '../homeComponent/home.component';
-//CORE_REFERENCE_IMPORT-checkComponent
-import { checkComponent } from '../checkComponent/check.component';
-//CORE_REFERENCE_IMPORT-newComponent
-import { newComponent } from '../newComponent/new.component';
-//CORE_REFERENCE_IMPORT-awetComponent
-import { awetComponent } from '../awetComponent/awet.component';
 //CORE_REFERENCE_IMPORT-cardstackserviceService
 // import { cardstackserviceService } from '../services/cardstackservice/cardstackservice.service';
 //CORE_REFERENCE_IMPORT-cardstackComponent
@@ -72,12 +66,6 @@ export const appDeclarations = [
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
 homeComponent,
-//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-checkComponent
-checkComponent,
-//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-newComponent
-newComponent,
-//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-awetComponent
-awetComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cardstackComponent
 cardstackComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-tinderComponent
