@@ -33,7 +33,7 @@ export function JsonObject(target: any) {
  * If you decide to use a custom converter, make sure this class implements the interface JsonCustomConvert from this package.
  *
  * @param jsonPropertyName optional param (default: classPropertyName) the property name in the expected JSON object
- * @param conversionOption optional param (default: Any), should be either the expected type (String|Boolean|Number|etc) 
+ * @param conversionOption optional param (default: Any), should be either the expected type (String|Boolean|Number|etc)
  * or a custom converter class implementing JsonCustomConvert
  * @param isOptional optional param (default: false), if true, the json property does not have to be present in the object
  *
@@ -110,6 +110,7 @@ export class JsonConvert {
      * - ValueCheckingMode.DISALLOW_NULL: no null values are tolerated in the JSON
      */
     private _valueCheckingMode: number = ValueCheckingMode.ALLOW_OBJECT_NULL;
+    errors = [];
     get valueCheckingMode(): number {
         return this._valueCheckingMode;
     }
@@ -172,13 +173,13 @@ export class JsonConvert {
      * @throws an exception in case of failure
      */
     deserialize(json: any, classReference: { new(): any }): any {
-
+        this.errors = [];
 
         if (json.constructor === Array) {
-            return this.deserializeArray(json, classReference);
+            return {instance: this.deserializeArray(json, classReference), errors: this.errors };
         }
         if (typeof json === 'object') {// must be last due to the fact that an array is an object in TypeScript!
-            return this.deserializeObject(json, classReference)
+            return {instance: this.deserializeObject(json, classReference), errors: this.errors };
         };
 
         return new Error(
@@ -197,7 +198,6 @@ export class JsonConvert {
      * @returns {any} the deserialized TypeScript instance and @returns an exception in case of failure
      */
     deserializeObject(jsonObject: any, classReference: { new(): any }): any {
-        const errorArr = [];
         if (typeof (jsonObject) !== 'object' || jsonObject instanceof Array) {
             return new Error(
                 'Fatal error in JsonConvert. ' +
@@ -211,13 +211,10 @@ export class JsonConvert {
             try {
                 this.deserializeObject_loopProperty(instance, propertyKey, jsonObject);
             } catch (error) {
-                errorArr.push(error);
+              this.errors.push(error);
             }
         }
-        return {
-            instance: instance,
-            errors: errorArr
-        }
+        return instance;
     }
 
     /**
@@ -240,17 +237,13 @@ export class JsonConvert {
         }
 
         const array: any[] = [];
-        const errors: any[] = [];
         // Loop through all array elements
         for (const jsonObject of jsonArray) {
             const des = this.deserializeObject(jsonObject, classReference);
             array.push(des.instance);
-            errors.push(des.errors);
+            this.errors.push(des.errors);
         }
-        return {
-            instance: array,
-            errors: errors
-        }
+        return array;
     }
 
     /**
@@ -293,6 +286,7 @@ export class JsonConvert {
         // Map the property
         try {
             instance[classPropertyName] = this.verifyProperty(expectedJsonType, jsonValue);
+            json[jsonKey] = instance[classPropertyName];
         } catch (e) {
             throw new Error(
                 'Fatal error in JsonConvert. ' +
@@ -415,12 +409,19 @@ export class JsonConvert {
                     throw new Error('\tReason: Given object does not match the expected primitive type.');
                 }
             } else if (typeof expectedJsonType === 'function' && expectedJsonType.prototype.constructor.name === 'Date') {
+                if(!value)  {
+                    throw new Error('\tReason: Expected type is Date. Got invalid date ' + JSON.stringify(value));
+                }
+                try {
+                    value = new Date(value);
+                } catch(error) {
+                    throw new Error('\tReason: Expected type is Date. Got invalid date ' + JSON.stringify(value));
+                }
                 return value;
-
             } else { // other weird types
                 throw new Error(`\tReason: Expected type is unknown. There might be multiple reasons for this:
-                \n\t- You are missing the decorator @JsonObject (for object mapping)\n\t- 
-                You are missing the decorator @JsonConverter (for custom mapping) before your class definition\n\t- 
+                \n\t- You are missing the decorator @JsonObject (for object mapping)\n\t-
+                You are missing the decorator @JsonConverter (for custom mapping) before your class definition\n\t-
                 Your given class is undefined in the decorator because of circular dependencies`);
             }
         }

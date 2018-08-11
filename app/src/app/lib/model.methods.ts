@@ -1,9 +1,8 @@
-import { SystemService } from '../service/system.service';
-import { BDataSourceService } from '../service/bDataSource.service';
 import { NgForm } from '@angular/forms';
-import { BDataModelService } from '../service/bDataModel.service';
 import * as models from '../models';
 import { JsonConvert } from './tj.deserializer';
+
+import { NDataModelService } from 'neutrinos-seed-services';
 
 export class ModelMethods {
 
@@ -16,7 +15,7 @@ export class ModelMethods {
     private INVALID_ERROR_CALLBACK = 'INVALID_ERROR_CALLBACK';
 
 
-    constructor(private dmService: BDataModelService) { };
+    constructor(private dmService: NDataModelService) { };
 
     public get(dataModelName: string, componentInstance, filter?, keys?, sort?, pagenumber?, pagesize?, resultCallback?: (result) => void,
         errorCallback?: (erroObject: Error) => void) {
@@ -38,7 +37,7 @@ export class ModelMethods {
                 dataModelObject = Object.assign({}, dataModelObject);
                 const des = this.deserializingTest(dataModelName, dataModelObject);
                 if (des.errors && des.errors.length === 0) {
-                    const deepChecked = this.rDeepCheckModel(dataModelName, dataModelObject, errorCallback);
+                    const deepChecked = this.rDeepCheckModel(dataModelName, dataModelObject, errorCallback, 'update');
                     if (deepChecked && deepChecked.valid) {
                         this.dmService.put(dataModelName, deepChecked.dmObject).subscribe(result => {
                             this.resultCallbackAssign(resultCallback, result);
@@ -166,7 +165,7 @@ export class ModelMethods {
                     dataModelObject = Object.assign({}, dataModelObject);
                     const des = this.deserializingTest(dataModelName, dataModelObject);
                     if (des.errors && des.errors.length === 0) {
-                        const deepChecked = this.rDeepCheckModel(dataModelName, dataModelObject, errorCallback);
+                        const deepChecked = this.rDeepCheckModel(dataModelName, dataModelObject, errorCallback, 'update');
                         if (deepChecked && deepChecked.valid) {
                             this.dmService.updateById(dataModelName, dataModelId, deepChecked.dmObject).subscribe(result => {
                                 this.resultCallbackAssign(resultCallback, result);
@@ -242,28 +241,21 @@ export class ModelMethods {
     /**
      * Recursively checking extra properties error
      */
-    private rDeepCheckModel(modelName, dmObject, errorCallback) {
+    private rDeepCheckModel(modelName, dmObject, errorCallback, type?) {
         let checkObjectAgaistModel: any = {};
+        if (type == 'update' && dmObject.hasOwnProperty('_id')) {
+            delete dmObject['_id'];
+        }
         checkObjectAgaistModel = this.checkExtraProperties(modelName, dmObject, errorCallback);
         if (checkObjectAgaistModel && checkObjectAgaistModel.valid) {
             var keysList = Object.keys(dmObject);
             for (var key = 0; key < keysList.length; key++) {
                 if (typeof dmObject[keysList[key]] === 'object') {
-                    // check if date or $date operator if true return
                     if (Object.prototype.toString.call(dmObject[keysList[key]]) === '[object Date]') {
                         dmObject[keysList[key]] = {
                             '$date': dmObject[keysList[key]]
                         }
-                        return {
-                            valid: true,
-                            dmObject: dmObject
-                        };
-                    }
-                    if (dmObject[keysList[key]].hasOwnProperty('$date')) {
-                        return {
-                            valid: true,
-                            dmObject: dmObject
-                        };
+                        continue;
                     }
                     const classPropertyName = this.getClassPropertyName(modelName, keysList[key]);
                     if (classPropertyName && dmObject[keysList[key]]) {

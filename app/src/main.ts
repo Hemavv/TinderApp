@@ -1,17 +1,11 @@
-import { firebaseInitForServiceWorker } from 'libConfig/firebaseInitForServiceWorker';
-import { environment } from 'environments/environment.prod';
+import { firebaseInitForServiceWorker } from './libConfig/firebaseInitForServiceWorker';
+import { environment } from './environments/environment.prod';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import * as firebase from 'firebase';
-import { AppModule } from 'app/app.module';
-import { initChartJS } from 'libConfig/initChartJS';
-import { SystemService } from 'app/service/system.service';
-import { BLocalStorageService } from 'app/service/bLocalStorage.service';
-// import { SystemService } from 'app/service/system.service.ts';
-
-let bSystemService: SystemService = SystemService.getInstance();
-const deviceType = bSystemService.deviceType;
-let bLocalStorageService = new BLocalStorageService();
+import { AppModule } from './app/app.module';
+import { initChartJS } from './libConfig/initChartJS';
+import { NSystemService } from 'neutrinos-seed-services';
 
 if (environment.properties.production) {
   enableProdMode();
@@ -21,6 +15,7 @@ if (environment.properties.production) {
 
 function bootstrapNow() {
   platformBrowserDynamic().bootstrapModule(AppModule).then((data) => {
+    NSystemService.getInstance();
     if (window['navigator'] && window['navigator']['splashscreen']) {
       // hide splash screen
       window['navigator']['splashscreen'].hide();
@@ -32,12 +27,19 @@ function bootstrapNow() {
   });
 }
 
-function isCordovaBrowser() {
-  return deviceType === 'cordova_browser';
+function checkDeviceLocal(): string {
+  if(window['cordova']) {
+    return 'mobile';
+  } else {
+    return 'browser';
+  }
 }
 
-function isBrowser() {
-  return deviceType === 'browser';
+
+let deviceTypeLocal = checkDeviceLocal();
+
+if (deviceTypeLocal == 'browser') {
+  bootstrapNow();
 }
 
 /**
@@ -49,9 +51,3 @@ function isBrowser() {
 document.addEventListener('deviceready', function () {
   bootstrapNow();
 });
-
-
-
-if (isBrowser() && !isCordovaBrowser()) {
-  bootstrapNow();
-}

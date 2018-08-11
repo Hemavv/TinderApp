@@ -1,12 +1,9 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from '@angular/core'
-import { ModelMethods } from '../lib/model.methods';
-import { BDataModelService } from '../service/bDataModel.service';
-
-/**
-* Model import Example :
-* import { HERO } from '../models/hero.model';
-*/
+import { ModelMethods } from '../../lib/model.methods';
+// import { BDataModelService } from '../service/bDataModel.service';
+import { NDataModelService } from 'neutrinos-seed-services';
+import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 
 /**
  * Service import Example :
@@ -18,19 +15,20 @@ import { BDataModelService } from '../service/bDataModel.service';
     templateUrl: './%templateUrl%'
 })
 
-export class %className% implements OnInit {
-    dm: ModelMethods;
+export class %className% extends NBaseComponent implements OnInit {
+    mm: ModelMethods;
 
-    constructor(private bdms: BDataModelService) {
-        this.dm = new ModelMethods(bdms);
+    constructor(private bdms: NDataModelService) {
+        super();
+        this.mm = new ModelMethods(bdms);
     }
 
     ngOnInit() {
 
     }
 
-    get(dataModelName, filter ?, keys ?, sort ?, pagenumber ?, pagesize ?) {
-        this.dm.get(dataModelName, this, filter, keys, sort, pagenumber, pagesize,
+    get(dataModelName, filter?, keys?, sort?, pagenumber?, pagesize?) {
+        this.mm.get(dataModelName, this, filter, keys, sort, pagenumber, pagesize,
             result => {
                 // On Success code here
             },
@@ -40,7 +38,7 @@ export class %className% implements OnInit {
     }
 
     getById(dataModelName, dataModelId) {
-        this.dm.getById(dataModelName, dataModelId,
+        this.mm.getById(dataModelName, dataModelId,
             result => {
                 // On Success code here
             },
@@ -50,7 +48,7 @@ export class %className% implements OnInit {
     }
 
     put(dataModelName, dataModelObject) {
-        this.dm.put(dataModelName, dataModelObject,
+        this.mm.put(dataModelName, dataModelObject,
             result => {
                 // On Success code here
             }, error => {
@@ -59,7 +57,7 @@ export class %className% implements OnInit {
     }
 
     validatePut(formObj, dataModelName, dataModelObject) {
-        this.dm.validatePut(formObj, dataModelName, dataModelObject,
+        this.mm.validatePut(formObj, dataModelName, dataModelObject,
             result => {
                 // On Success code here
             }, error => {
@@ -73,7 +71,7 @@ export class %className% implements OnInit {
             filter: filter,
             options: options
         };
-        this.dm.update(dataModelName, updateObject,
+        this.mm.update(dataModelName, updateObject,
             result => {
                 //  On Success code here
             }, error => {
@@ -82,7 +80,7 @@ export class %className% implements OnInit {
     }
 
     delete (dataModelName, filter) {
-        this.dm.delete(dataModelName, filter,
+        this.mm.delete(dataModelName, filter,
             result => {
                 // On Success code here
             }, error => {
@@ -91,7 +89,7 @@ export class %className% implements OnInit {
     }
 
     deleteById(dataModelName, dataModelId) {
-        this.dm.deleteById(dataModelName, dataModelId,
+        this.mm.deleteById(dataModelName, dataModelId,
             result => {
                 // On Success code here
             }, error => {
@@ -100,7 +98,7 @@ export class %className% implements OnInit {
     }
 
     updateById(dataModelName, dataModelId, dataModelObj) {
-        this.dm.updateById(dataModelName, dataModelId, dataModelObj,
+        this.mm.updateById(dataModelName, dataModelId, dataModelObj,
             result => {
                 // On Success code here
             }, error => {

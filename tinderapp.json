@@ -2,8 +2,10 @@
     "artId": "",
     "appName": "tinderapp",
     "description": "tinderapp",
-    "createDate": "2018-07-25T08:43:41.441Z",
-    "lastModified": "2018-07-25T08:43:41.441Z",
+    "createDate": "2018-08-11T06:04:44.512Z",
+    "lastModified": "2018-08-11T06:04:44.512Z",
     "createdBy": "user",
-    "artURL": "http://localhost:3000/bhive-art/"
+    "artURL": "http://localhost:3000/bhive-art/",
+    "imgSourcePath": "",
+    "version": "1.0.0"
 }

@@ -1,7 +1,7 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
 // import { Injectable } from '@angular/core';
 import { Injectable } from '@angular/core'
-import { BAppService } from '../../service/bApp.service';
+import { NSnackbarService } from 'neutrinos-seed-services';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
@@ -23,7 +23,7 @@ export class stackserviceService {
     public cardSub$ = this.__cards.asObservable();
 
 
-    constructor(public snackBar: BAppService) { }
+    constructor(public snackBar: NSnackbarService) { }
 
     removecard(event) {
         this.snackBar.openSnackBar("You have swiped " + event.throwDirection.toString().replace('Symbol(', '').replace(')', ''));

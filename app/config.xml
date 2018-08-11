@@ -1,9 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="co.ideas.neutrinos" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>neutrinos</name>
-    <description>
-        Neutrinos application
-    </description>
+    <name>tinderapp</name>
+    <description>tinderapp</description>
     <author email="ideas@neutrinos.co" href="http://neutrinos.co">
         Neutrinos Team
     </author>
@@ -62,13 +60,14 @@
         <preference name="FadeSplashScreen" value="false" />
         <preference name="AutoHideSplashScreen" value="false" />
         <resource-file src="GoogleService-Info.plist" />
-        <splash height="1136" src="src/assets/iOS/Resources/splash/Default-568h@2x~iphone.png" width="640" />
-        <splash height="1334" src="src/assets/iOS/Resources/splash/Default-667h@2x~iphone.png" width="750" />
-        <splash height="2208" src="src/assets/iOS/Resources/splash/Default-736h@3x~iphone.png" width="1242" />
-        <splash height="1242" src="src/assets/iOS/Resources/splash/Default-Landscape-736h.png" width="2208" />
-        <splash height="1536" src="src/assets/iOS/Resources/splash/Default-Landscape@2x~ipad.png" width="2048" />
-        <splash height="480" src="src/assets/iOS/Resources/splash/Default~iphone.png" width="320" />
-        <splash height="960" src="src/assets/iOS/Resources/splash/Default@2x~iphone.png" width="640" />
+        <splash height="2732" src="src/assets/iOS/Resources/splash/Default@2x~ipad~anyany.png" width="2732" />
+        <splash height="2732" src="src/assets/iOS/Resources/splash/Default@2x~ipad~comany.png" width="1278" />
+        <splash height="1334" src="src/assets/iOS/Resources/splash/Default@2x~iphone~anyany.png" width="1334" />
+        <splash height="1334" src="src/assets/iOS/Resources/splash/Default@2x~iphone~comany.png" width="750" />
+        <splash height="750" src="src/assets/iOS/Resources/splash/Default@2x~iphone~comcom.png" width="1334" />
+        <splash height="2208" src="src/assets/iOS/Resources/splash/Default@3x~iphone~anyany.png" width="2208" />
+        <splash height="1242" src="src/assets/iOS/Resources/splash/Default@3x~iphone~anycom.png" width="2208" />
+        <splash height="2208" src="src/assets/iOS/Resources/splash/Default@3x~iphone~comany.png" width="1242" />
         <icon height="180" src="src/assets/iOS/Resources/icons/icon-60@3x.png" width="180" />
         <icon height="60" src="src/assets/iOS/Resources/icons/icon-60.png" width="60" />
         <icon height="120" src="src/assets/iOS/Resources/icons/icon-60@2x.png" width="120" />
@@ -84,13 +83,11 @@
         <icon height="58" src="src/assets/iOS/Resources/icons/icon-small@2x.png" width="58" />
         <icon height="50" src="src/assets/iOS/Resources/icons/icon-50.png" width="50" />
         <icon height="100" src="src/assets/iOS/Resources/icons/icon-50@2x.png" width="100" />
-        <config-file target="*-Info.plist" parent="UIFileSharingEnabled">
-           <true/>
+        <config-file parent="UIFileSharingEnabled" target="*-Info.plist">
+            <true />
         </config-file>
     </platform>
     <plugin name="cordova-plugin-device" spec="~2.0.1" />
-    <engine name="android" spec="~7.1.0" />
-    <engine name="ios" spec="~4.5.4" />
     <plugin name="cordova-plugin-local-notification" spec="~0.9.0-beta.2" />
     <plugin name="cordova-plugin-x-toast" spec="~2.6.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="~2.0.2" />
@@ -107,4 +104,6 @@
     <plugin name="cordova-plugin-geolocation" spec="~4.0.1" />
     <plugin name="cordova.plugins.diagnostic" spec="~4.0.1" />
     <plugin name="cordova-plugin-document-scanner" spec="^1.0.5" />
+    <engine name="android" spec="~7.1.0" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>

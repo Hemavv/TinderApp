@@ -9,9 +9,10 @@ import 'hammerjs';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { BhiveFileModule } from '../file/file.module';
 import { AgmCoreModule } from '@agm/core';
-import { environment } from 'environments/environment'
+import { environment } from '../../environments/environment';
+import { NeutrinosModule } from 'neutrinos-module';
+
 
 
 import {
@@ -22,6 +23,10 @@ import {
   MatRadioModule, MatSliderModule, MatStepperModule, MatExpansionModule, MatChipsModule, MatProgressSpinnerModule,
   MatProgressBarModule, MatTableModule, MatSortModule, MatPaginatorModule, MatGridListModule, MatNativeDateModule
 } from '@angular/material';
+
+/**
+ * adding the environments into the window object
+*/
 
 /**
 *imports for @NgModule
@@ -37,7 +42,6 @@ export const appImportModules: any = [
   ChartsModule,
   HttpModule,
   HttpClientModule,
-  BhiveFileModule,
   /**
    * Angular material components
    */
@@ -72,8 +76,9 @@ export const appImportModules: any = [
   MatPaginatorModule,
   MatGridListModule,
   MatNativeDateModule,
-
   AgmCoreModule.forRoot({
     apiKey: environment.properties.googleMapKey
-  })
+  }),
+  NeutrinosModule,
+  
 ];

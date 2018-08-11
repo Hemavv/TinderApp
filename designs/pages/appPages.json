@@ -1,17 +1,7 @@
 {
-    "7a1992e5-d9fd-2030-0c27-f413e87f6b6e": {
-        "appPageName": "tinder",
-        "componentName": "tinderComponent",
-        "isEntry": false
-    },
     "d55baa1a-3c02-c15d-fcae-038446d6d286": {
         "appPageName": "cardstack",
         "componentName": "cardstackComponent",
-        "isEntry": false
-    },
-    "b2e94616-37b4-ec71-e441-2a82563d445b": {
-        "appPageName": "home",
-        "componentName": "homeComponent",
         "isEntry": false
     }
 }
