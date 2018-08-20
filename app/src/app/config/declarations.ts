@@ -14,6 +14,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-newComponent
+import { newComponent } from '../components/newComponent/new.component';
 //CORE_REFERENCE_IMPORT-stackserviceService
 import { stackserviceService } from '../services/stackservice/stackservice.service';
 //CORE_REFERENCE_IMPORT-cardstackComponent
@@ -52,6 +54,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   NMapComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-newComponent
+newComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-cardstackComponent
 cardstackComponent,
 
